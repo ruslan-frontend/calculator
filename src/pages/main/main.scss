@@ -1,0 +1,36 @@
+.main {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+
+    &__title {
+        font-family: 'Nekst-Black', sans-serif;
+        font-weight: 900;
+        font-size: 5.4rem;
+        line-height: 90%;
+        color: #111111;
+
+        max-width: 753px;
+        width: 100%;
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__sum {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 44px;
+    }
+}
+
+.value {
+    font-family: 'Nekst-Black', sans-serif;
+    font-weight: 900;
+    font-size: 5.4rem;
+    line-height: 90%;
+    color: #333333;
+    margin-top: 8px;
+}
