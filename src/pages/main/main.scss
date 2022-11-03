@@ -1,7 +1,7 @@
 .main {
     max-width: 1440px;
-    width: 100%;
     margin: 0 auto;
+    padding: 213px 0;
 
     &__title {
         font-family: 'Nekst-Black', sans-serif;
@@ -17,6 +17,7 @@
     &__inputs {
         display: flex;
         justify-content: space-between;
+        margin-top: 32px;
     }
 
     &__sum {

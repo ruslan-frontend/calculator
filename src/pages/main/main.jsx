@@ -1,34 +1,38 @@
 import Button from '../../components/button/button';
-import Form from '../../components/form/form';
+import CarPrice from '../../components/carPrice/carPrice';
+import FirstPay from '../../components/firstPay/firstPay';
+import Term from '../../components/term/term';
 import './main.scss';
 
 function Main() {
+
     return (
         <main className="main">
             <h1 className="main__title">
                 Рассчитайте стоимость автомобиля в лизинг
             </h1>
             <div className="main__inputs">
-                <Form 
+                <CarPrice 
                 topic = 'Стоимость автомобиля'
                 min = {1000000}
                 max = {6000000}
-                value = {3000000}
                 step = {10000}
+                // measure = '&#8381;'
+                // onChange={'onChangeHandler'}
+                // value = {'inputValue'}
                 />
-                <Form 
+                <FirstPay 
                 topic = 'Первоначальный взнос'
                 min = {10}
                 max = {60}
-                value = {20}
-                step = {5}
+                step = {1}
                 />
-                <Form 
+                <Term 
                 topic = 'Срок лизинга'
                 min = {1}
                 max = {60}
-                value = {36}
-                step = {4}
+                step = {1}
+                // measure = 'мес.'
                 />
             </div>
             <div className="main__sum">
