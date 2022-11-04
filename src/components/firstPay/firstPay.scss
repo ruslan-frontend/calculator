@@ -5,18 +5,22 @@
     gap: 24px;
 
     &__percents {
-        background: #F3F3F4;
-        border-radius: 16px;
+        padding: 15px 17px;
         border: none;
-        width: 427px;
-        height: 68px;
-        padding: 16px 24px 16px 332px;
+        width: 69px;
+        height: 54px;
+
+        background: #EBEBEC;
+        border-radius: 16px;
 
         font-family: 'Nekst-Black', sans-serif;
         font-weight: 900;
-        font-size: 3rem;
-        line-height: 36px;
+        font-size: 2rem;
+        line-height: 120%;
+        text-align: left;
         color: #575757;
+        position: absolute;
+        right: 7px;
     }
 
     &__range {
@@ -48,25 +52,35 @@
 }
 
 .wrapper {
-    position: relative;
 
-    &__percent {
-        position: absolute;
+    &__payment {
+        position: relative;
+        width: 427px;
+        height: 68px;
+        background: #F3F3F4;
+        border-radius: 16px;    
+        padding: 7px 7px;
+    }
+
+    &__amount {
         font-family: 'Nekst-Black', sans-serif;
+        font-style: normal;
         font-weight: 900;
         font-size: 3rem;
         line-height: 36px;
         color: #575757;
-        right: 24px;
+        margin: 9px 17px;
     }
+}
 
-    &__descr2 {
-        position: absolute;
-        font-family: 'Nekst-Black', sans-serif;
-        font-weight: 900;
-        font-size: 3rem;
-        line-height: 36px;
-        color: #575757;
-        left: 24px;
-    }
+.percent-sign {
+    font-family: 'Nekst-Black', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 120%;
+    text-align: right;
+    color: #575757;
+    position: absolute;
+    margin: 15px 0;
+    right: 12px;
 }

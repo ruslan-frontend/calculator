@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './carPrice.scss';
 
-function CarPrice( { topic, min, max, step, measure, onChange, value } ) {
+function CarPrice( { topic, min, max, step } ) {
 
     const [inputValue, setInputValue] = useState('3000000');
     const onChangeHandler = (e) => {

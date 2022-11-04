@@ -3,7 +3,7 @@ import './term.scss';
 
 function Term( { topic, min, max, step, measure } ) {
     
-    const [inputValue, setInputValue] = useState('24');
+    const [inputValue, setInputValue] = useState('36');
     const onChangeHandler = (e) => {
         setInputValue(e.target.value);
     };
