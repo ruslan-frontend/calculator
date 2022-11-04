@@ -1,15 +1,19 @@
-import { useState } from 'react';
 import './carPrice.scss';
 
-function CarPrice( { topic, min, max, step } ) {
+function CarPrice( { topic, min, max, step, carPrice, setCarPrice } ) {
 
-    const [inputValue, setInputValue] = useState('3000000');
-    const onChangeHandler = (e) => {
-        setInputValue(e.target.value);
-    };
+        const onChangeHandler = (e) => {
+            if (e.target.value < 1000000) {
+                setCarPrice(1000000);
+            } else if (e.target.value > 6000000) {
+                setCarPrice(6000000);
+            } else {
+                setCarPrice(e.target.value);
+            }
+        };
 
     return (
-        <form className="form">
+        <div className="form">
             <p className="topic">
                 {topic}
             </p>
@@ -22,7 +26,7 @@ function CarPrice( { topic, min, max, step } ) {
                     max={max}
                     min={min}  
                     maxlength="7"
-                    value={inputValue}
+                    value={carPrice}
                     onChange={onChangeHandler}
                 />
                 <p className='wrapper__descr1'>&#8381;</p>
@@ -34,11 +38,11 @@ function CarPrice( { topic, min, max, step } ) {
                 name="input_range" 
                 min={min} 
                 max={max}
-                value={inputValue}
+                value={carPrice}
                 step={step}
                 onChange={onChangeHandler}
             />
-        </form>
+        </div>
     );
 }
 

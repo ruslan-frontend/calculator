@@ -1,15 +1,13 @@
-import { useState } from 'react';
 import './term.scss';
 
-function Term( { topic, min, max, step, measure } ) {
+function Term( { topic, min, max, step, term, setTerm } ) {
     
-    const [inputValue, setInputValue] = useState('36');
     const onChangeHandler = (e) => {
-        setInputValue(e.target.value);
+        setTerm(e.target.value);
     };
 
     return (
-        <form className="form">
+        <div className="form">
             <p className="topic">
                 {topic}
             </p>
@@ -21,7 +19,7 @@ function Term( { topic, min, max, step, measure } ) {
                     max={max}
                     min={min}  
                     maxlength="2"
-                    value={inputValue}
+                    value={term}
                     onChange={onChangeHandler}
                 />
                 <p className='wrapper__descr3'>мес.</p>
@@ -33,10 +31,10 @@ function Term( { topic, min, max, step, measure } ) {
                 min={min} 
                 max={max}
                 step={step}
-                value={inputValue}
+                value={term}
                 onChange={onChangeHandler}
             />
-        </form>
+        </div>
     );
 }
 

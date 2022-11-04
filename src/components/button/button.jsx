@@ -2,7 +2,7 @@ import './button.scss';
 
 function Button() {
     return (
-        <button className="button">
+        <button type='submit' className="button">
             Оставить заявку
         </button>
     );

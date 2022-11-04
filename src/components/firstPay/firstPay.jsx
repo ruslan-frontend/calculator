@@ -1,15 +1,19 @@
-import { useState } from 'react';
 import './firstPay.scss';
 
-function FirstPay( { topic, min, max, step } ) {
+function FirstPay( { topic, min, max, step, firstPayPercents, setFirstPayPercents, firstPayRubles } ) {
 
-    const [inputValue, setInputValue] = useState('35');
     const onChangeHandler = (e) => {
-        setInputValue(e.target.value);
+        if (e.target.value < 10) {
+            setFirstPayPercents(10);
+        } else if (e.target.value > 60) {
+            setFirstPayPercents(60);
+        } else {
+            setFirstPayPercents(e.target.value);
+        }
     };
 
     return (
-        <form className="form">
+        <div className="form">
             <p className="topic">
                 {topic}
             </p>
@@ -23,11 +27,11 @@ function FirstPay( { topic, min, max, step } ) {
                         max={max}
                         min={min}
                         maxLength='2'
-                        value={inputValue}
+                        value={firstPayPercents}
                         onChange={onChangeHandler}
                     />
                     <span className="percent-sign">%</span>
-                    <p className="wrapper__amount">100 000 &#8381;</p>
+                    <p className="wrapper__amount">{firstPayRubles} &#8381;</p>
                 </div>
                 <input 
                     type="range" 
@@ -36,12 +40,12 @@ function FirstPay( { topic, min, max, step } ) {
                     name="input_range" 
                     min={min} 
                     max={max}
-                    value={inputValue}
+                    value={firstPayPercents}
                     step={step}
                     onChange={onChangeHandler}
                 />
             </div>
-        </form>
+        </div>
     );
 }
 
