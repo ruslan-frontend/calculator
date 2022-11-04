@@ -3,7 +3,13 @@ import './term.scss';
 function Term( { topic, min, max, step, term, setTerm } ) {
     
     const onChangeHandler = (e) => {
-        setTerm(e.target.value);
+        if (e.target.value < 1) {
+            setTerm(1);
+        } else if (e.target.value > 60) {
+            setTerm(60);
+        } else {
+            setTerm(e.target.value);
+        }
     };
 
     return (

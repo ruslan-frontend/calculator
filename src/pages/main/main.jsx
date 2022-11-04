@@ -19,8 +19,6 @@ function Main() {
 
     let fullSum = Math.round(firstPayRubles + term * monthPay);
 
-
-
     return (
         <main className="main">
             <h1 className="main__title">
