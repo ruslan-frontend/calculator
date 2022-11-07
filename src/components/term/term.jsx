@@ -24,7 +24,7 @@ function Term( { topic, min, max, step, term, setTerm } ) {
                     id="input_text"
                     max={max}
                     min={min}  
-                    maxlength="2"
+                    maxLength="2"
                     value={term}
                     onChange={onChangeHandler}
                 />

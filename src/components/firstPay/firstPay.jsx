@@ -7,9 +7,7 @@ function FirstPay( { topic, min, max, step, firstPayPercents, setFirstPayPercent
             setFirstPayPercents(10);
         } else if (e.target.value > 60) {
             setFirstPayPercents(60);
-        } else {
-            setFirstPayPercents(e.target.value);
-        }
+        } 
     };
 
     return (
@@ -28,7 +26,8 @@ function FirstPay( { topic, min, max, step, firstPayPercents, setFirstPayPercent
                         min={min}
                         maxLength='2'
                         value={firstPayPercents}
-                        onChange={onChangeHandler}
+                        onChange={(e) => setFirstPayPercents(e.target.value)}
+                        onBlur={onChangeHandler}
                     />
                     <span className="percent-sign">%</span>
                     <p className="wrapper__amount">{firstPayRubles} &#8381;</p>

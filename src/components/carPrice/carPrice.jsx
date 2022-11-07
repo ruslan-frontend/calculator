@@ -7,8 +7,6 @@ function CarPrice( { topic, min, max, step, carPrice, setCarPrice } ) {
                 setCarPrice(1000000);
             } else if (e.target.value > 6000000) {
                 setCarPrice(6000000);
-            } else {
-                setCarPrice(e.target.value);
             }
         };
 
@@ -25,9 +23,10 @@ function CarPrice( { topic, min, max, step, carPrice, setCarPrice } ) {
                     name="input_text" 
                     max={max}
                     min={min}  
-                    maxlength="7"
+                    maxLength="7"
                     value={carPrice}
-                    onChange={onChangeHandler}
+                    onChange={(e) => setCarPrice(e.target.value)}
+                    onBlur={onChangeHandler}
                 />
                 <p className='wrapper__descr1'>&#8381;</p>
             </div>
@@ -40,7 +39,7 @@ function CarPrice( { topic, min, max, step, carPrice, setCarPrice } ) {
                 max={max}
                 value={carPrice}
                 step={step}
-                onChange={onChangeHandler}
+                onChange={(e) => setCarPrice(e.target.value)}
             />
         </div>
     );
