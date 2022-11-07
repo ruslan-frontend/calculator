@@ -41,7 +41,7 @@ function FirstPay( { topic, min, max, step, firstPayPercents, setFirstPayPercent
                     max={max}
                     value={firstPayPercents}
                     step={step}
-                    onChange={onChangeHandler}
+                    onChange={(e) => setFirstPayPercents(e.target.value)}
                 />
             </div>
         </div>
